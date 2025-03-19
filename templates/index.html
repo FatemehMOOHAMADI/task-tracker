@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Home
+{% endblock %}
+
+{% block body %}
+
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Task</th>
+        <th scope="col">Label</th>
+        <th scope="col">Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+        {% for task in tasks %}
+        <tr>
+            <td scope="row">{{ task.id }}</td>
+            <td>{{ task.task }}</td>
+            <td>{{ task.label }}</td>
+            <form action="/delete" method="post">
+                <td><button name=id type="submit" class="btn btn-danger" value={{ task.id }}>delete</button></td>
+            </form>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}

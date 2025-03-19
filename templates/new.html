@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    new task
+{% endblock %}
+
+{% block body %}
+    <form action="/new" method="post">
+        <input name="task" placeholder="Task" type="text" class="form-control mb-3" aria-label="default input example">
+        <input name="label" placeholder="Label" type="text" class="form-control mb-3" aria-label="default input example">
+        <input type="submit" class="btn btn-primary mb-3" value="Add Task">
+    </form>
+{% endblock %}
